@@ -1,0 +1,145 @@
+<app-header-assignment></app-header-assignment>
+
+
+<mat-card class="tp-card">
+  <mat-card-title>
+    <h4>Ajouter un assignment</h4>
+  </mat-card-title>
+  <mat-divider [inset]="true"></mat-divider>
+  <br>
+  <mat-vertical-stepper #stepper>
+    <mat-step [stepControl]="dateFormGroup">
+        <ng-template matStepLabel>Ajouter une date du devoir à rendre</ng-template>
+        <mat-form-field>
+          <mat-label>Choisir une date</mat-label>
+          <input matInput [matDatepicker]="picker" required [(ngModel)]="dateDeRendu" name="date">
+
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperNext>Suivant</button>
+        </div>
+    </mat-step>
+
+
+    <!-- #docregion label -->
+    <mat-step [stepControl]="nomEleveFormGroup" label="Nom de l'élève">
+    <!-- #enddocregion label -->
+        <mat-form-field>
+          <input matInput placeholder="Nom de l'élève" name="eleve" [(ngModel)]="nomEleve" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Précédent</button>
+          <button mat-button matStepperNext>Suivant</button>
+        </div>
+    </mat-step>
+
+    <mat-step [stepControl]="matiereFormGroup" label="Choisisser la matière">
+      <!-- #enddocregion label -->
+          <mat-form-field>
+            <mat-label>Choisissez une matière</mat-label>
+
+            <select matNativeControl required [(ngModel)]="matiere" name="matiere">
+              <option *ngFor="let m of matieres" [value]="m.id">
+                {{m.nomMatier}} - {{m.nomProf}}
+              </option>
+            </select>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Précédent</button>
+            <button mat-button matStepperNext>Suivant</button>
+          </div>
+      </mat-step>
+
+      <mat-step [stepControl]="noteEtRemarqueFormGroup" label="Note et remarque">
+        <!-- #enddocregion label -->
+
+            <mat-form-field>
+              <input matInput placeholder="Note de l'élève" [(ngModel)]="note" type="number" name="note">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <textarea matInput placeholder="Remarques" [(ngModel)]="remarque" name="remarque"></textarea>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Précédent</button>
+              <button mat-button matStepperNext>Suivant</button>
+            </div>
+        </mat-step>
+
+
+    <mat-step>
+      <ng-template matStepLabel>Valider</ng-template>
+      <p>Vous avez maintenant finis les étapes d'ajout d'un devoir.</p>
+      <div>
+        <button mat-button matStepperPrevious>Retour</button>
+        <button mat-button color="warn" (click)="stepper.reset()">Reset</button>
+        <button mat-button color="primary" (click)="onSubmit($event)">Valider</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<mat-card class="tp-card">
+  <mat-card-title>
+    Ajouter un assignment
+  </mat-card-title>
+  <br>
+  <form ngForm #formAssignment class="form" (submit)="onSubmit($event); formAssignment.reset();">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Choisissez une date pour le devoir à rendre</mat-label>
+      <input matInput [matDatepicker]="picker" required [(ngModel)]="dateDeRendu" name="date">
+
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input matInput placeholder="Nom de l'élève" name="eleve" [(ngModel)]="nomEleve" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Choisissez une matière</mat-label>
+
+      <select matNativeControl required [(ngModel)]="matiere" name="matiere">
+        <option *ngFor="let m of matieres" [value]="m.id">
+          {{m.nomMatier}} - {{m.nomProf}}
+        </option>
+      </select>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <input matInput placeholder="Note de l'élève" [(ngModel)]="note" type="number" name="note">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Remarques" [(ngModel)]="remarque" name="remarque"></textarea>
+    </mat-form-field>
+
+    <button mat-stroked-button color="primary">
+      Ajouter un devoir
+    </button>
+  </form>
+
+</mat-card>-->
+
+

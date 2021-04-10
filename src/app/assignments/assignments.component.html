@@ -1,0 +1,128 @@
+<app-header-assignment></app-header-assignment>
+<br>
+<main class="container">
+  <!--<mat-grid-list cols="2" rowHeight="50px">
+    <mat-grid-tile style="background-color: red;" class="grid-assignements-imgMat">
+      img matiere
+    </mat-grid-tile>
+    <mat-grid-tile style="background-color: blue;" class="grid-assignements-imgProf">
+      img prof
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="1" colspan="2" style="background-color: green;">
+      nom eleve
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="1" colspan="2" style="background-color: green;">
+      note
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="1" colspan="2" style="background-color: yellow;">
+      details
+    </mat-grid-tile>
+  </mat-grid-list>-->
+  <br>
+  <mat-card>
+    <span>Liste des assignments</span>
+    <a routerLink="/add" class="ajouterBtn">
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>add_circle</mat-icon>
+      </button>
+    </a>
+  </mat-card>
+  <br>
+
+    <!--<button mat-stroked-button color="info" (click)="onSaveAllData()">Importer les datas</button>-->
+
+
+  <div cdkDropListGroup>
+      <div class="example-container">
+        <h2 class="titre"><mat-icon [inline]="true" style="font-size:30px;" >cancel</mat-icon>Non Rendu</h2>
+        <div
+          cdkDropList
+          [cdkDropListData]="assignmentsNonRendu"
+          class="example-list">
+        <mat-list *ngFor="let a of assignmentsNonRendu; let i = index" [attr.data-index]="i">
+            <mat-card class="example-box card_assign" cdkDrag>
+                <mat-card-title><h3 mat-subheader>{{a.dateDeRendu | date}}</h3></mat-card-title>
+                <mat-card-content>
+                  <mat-list-item>
+                      <img mat-card-avatar class="imgAvatar" alt="" src="assets/images/matieres/{{a.photoMatier}}">
+                      <img mat-card-avatar class="imgAvatar" alt="" src="assets/images/prof/{{a.photoProf}}">
+                  </mat-list-item>
+                  <br>
+                  <mat-divider [inset]="true"></mat-divider>
+                  <mat-list-item>
+                    <p>Nom de l'élève:&nbsp;<strong>{{a.nomEleve}}</strong></p>
+                  </mat-list-item>
+                  <mat-divider [inset]="true"></mat-divider>
+                  <mat-list-item>
+                    <p>Note:&nbsp;<strong><span style="color:red;">??</span></strong></p>
+                  </mat-list-item>
+                  <mat-divider [inset]="true"></mat-divider>
+                  <mat-card-actions>
+                    <a style="margin-left:2%;"mat-raised-button color="primary" routerLink="/assignment/{{a.id}}"><mat-icon [inline]="true" style="font-size:20px;" >edit</mat-icon></a>
+                  </mat-card-actions>
+                </mat-card-content>
+          </mat-card>
+          </mat-list>
+        </div>
+      </div>
+
+
+    <div class="example-container">
+      <h2 class="titre"><mat-icon [inline]="true" style="font-size:30px;" >check_circle</mat-icon>Rendu</h2>
+      <div
+        cdkDropList
+        [cdkDropListData]="assignmentsRendu"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <mat-list *ngFor="let a of assignmentsRendu; let i = index" [attr.data-index]="i">
+          <mat-card class="example-box card_assign" cdkDrag>
+              <mat-card-title><h3 mat-subheader>{{a.dateDeRendu | date}}</h3></mat-card-title>
+              <mat-card-content>
+                <mat-list-item>
+                  <img mat-card-avatar class="imgAvatar" alt="" src="assets/images/matieres/{{a.photoMatier}}">
+                  <img mat-card-avatar class="imgAvatar" alt="" src="assets/images/prof/{{a.photoProf}}">
+                </mat-list-item>
+                  <br>
+                  <mat-divider [inset]="true"></mat-divider>
+                  <mat-list-item>
+                    <p>Nom de l'élève:&nbsp;<strong>{{a.nomEleve}}</strong></p>
+                  </mat-list-item>
+
+                  <mat-divider [inset]="true"></mat-divider>
+                  <mat-list-item>
+                    <p>Note:<strong><span style="color:blue">&nbsp;{{a.note}}</span></strong></p>
+                  </mat-list-item>
+                  <mat-divider [inset]="true"></mat-divider>
+                <mat-card-actions>
+                  <a style="margin-left:2%;"mat-raised-button color="primary" routerLink="/assignment/{{a.id}}"><mat-icon [inline]="true" style="font-size:20px;" >edit</mat-icon></a>
+                </mat-card-actions>
+              </mat-card-content>
+
+        </mat-card>
+        </mat-list>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="paggination">
+    <!--<div class="parpaggination" >
+      <mat-form-field appearance="fill" >
+        <select matNativeControl required
+        #mySelect
+        (change)='OnOptionSelected(mySelect.value)'>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+        </select>
+      </mat-form-field>&nbsp;
+    </div>-->
+    <button mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="OnFirstPage()">Début</button>&nbsp;
+    <button mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="OnPreviousPage()"><mat-icon [inline]="true" style="font-size:25px;" >skip_previous</mat-icon></button>&nbsp;
+    <button mat-stroked-button disabled>{{page}}</button>&nbsp;
+    <button mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="OnNextPage()"><mat-icon [inline]="true" style="font-size:25px;" >skip_next</mat-icon></button>&nbsp;
+    <button mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="OnLastPage()">Fin</button>&nbsp;
+  </div>
+
+</main>

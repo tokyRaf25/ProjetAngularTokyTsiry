@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/home">
+      <mat-icon>home</mat-icon>
+      <span>Accueil</span>
+    </button>
+  </mat-menu>
+  <span>Gestion des assignments</span>
+  <span class="example-spacer"></span>
+  <button (click)="OnLogout()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+<br>

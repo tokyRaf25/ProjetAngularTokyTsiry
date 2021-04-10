@@ -1,0 +1,25 @@
+.container {
+  margin: 30px;
+}
+
+#bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.example-card {
+  max-width: 30%;
+  margin-top:0;
+  margin-right:auto;
+  margin-bottom:0;
+  margin-left:auto;
+}
+
+.input-card{
+  width:100%;
+}
+
+.imgAvatar{
+  width:50px;
+  height: 50px;
+}

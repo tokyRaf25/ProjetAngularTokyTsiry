@@ -1,0 +1,21 @@
+<mat-card class="tp-card">
+  <h3>Login</h3>
+  <p *ngIf="invalidLogin" style="color:red;">Les champs sont incorrectes!</p>
+  <form ngForm #formLogin class="example-form" (submit)="onSubmit($event)">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nom d'utilisateur</mat-label>
+      <input matInput [(ngModel)]="utilisateur" required name="utilisateur">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="motdepasse" name="motdepasse" required>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Se connecter</button>
+  </form>
+</mat-card>
+

@@ -1,0 +1,74 @@
+<app-header-assignment></app-header-assignment>
+<div class="container">
+  <mat-card *ngIf="assignmentTransmis && matiereTransmis" class="example-card">
+    <mat-card-title>
+      <h4>Détails d'un assignment</h4>
+    </mat-card-title>
+    <mat-divider [inset]="true"></mat-divider>
+    <br>
+    <mat-card-header>
+        <img mat-card-avatar class="imgAvatar" alt="" src="assets/images/matieres/{{matiereTransmis.photoMatier}}">
+        &nbsp;
+        <img mat-card-avatar class="imgAvatar" alt="" src="assets/images/prof/{{matiereTransmis.photoProf}}">
+      <mat-card-title>{{matiereTransmis.nomMatier}}</mat-card-title>
+      <mat-card-subtitle>
+        <p style="font-style: oblique;">Proff, {{matiereTransmis.nomProf}} </p>
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <br>
+      <p>
+        Nom de l'élève : <strong>&nbsp;{{assignmentTransmis.nomEleve}}</strong>
+      </p>
+      <mat-divider [inset]="true"></mat-divider>
+      <br>
+      <p>
+        Date de rendu : <strong>&nbsp;{{assignmentTransmis.dateDeRendu | date}}</strong>
+      </p>
+      <mat-divider [inset]="true"></mat-divider>
+      <br>
+
+
+      <div *ngIf="assignmentTransmis.note; else nonsoumis">
+          <p>Note de l'élève : <strong>&nbsp;{{assignmentTransmis.note}}</strong></p>
+          <mat-divider [inset]="true"></mat-divider>
+          <br>
+
+          <p>Remarque : <strong>&nbsp;{{assignmentTransmis.remarques}}</strong></p>
+          <mat-divider [inset]="true"></mat-divider>
+          <br>
+      </div>
+      <ng-template #nonsoumis>
+        <p>
+          <mat-form-field class="input-card">
+            <input matInput placeholder="Attribuer une note à l'élève" [(ngModel)]="note" type="number" name="note">
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field class="input-card">
+            <textarea matInput placeholder="Remarques" [(ngModel)]="remarque" name="remarque"></textarea>
+          </mat-form-field>
+        </p>
+      </ng-template>
+
+    </mat-card-content>
+    <br>
+    <div id="bottom">
+      <mat-checkbox *ngIf="!assignmentTransmis.rendu" [(ngModel)]="check" (click)="onAssignmentRendu()">
+        Rendre
+      </mat-checkbox>
+      <nav>
+
+          <button [disabled]="!isAdmin()" mat-stroked-button color="primary" (click)="onClickEdit()">Modifier</button>
+
+      </nav>
+
+
+      <button mat-stroked-button color="warn" (click)="onDelete()">Supprimer</button>
+    </div>
+  </mat-card>
+</div>
+
+

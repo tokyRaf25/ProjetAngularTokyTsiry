@@ -10,7 +10,7 @@ export class AuthService {
   loggedIn = false;
   admin = false;
 
-  uri = "http://localhost:8010/api/utilisateur";
+  uri = "https://mean-backoffice.herokuapp.com/api/utilisateur";
 
   constructor(private http:HttpClient,@Inject(LOCAL_STORAGE) private storage: StorageService) {}
 

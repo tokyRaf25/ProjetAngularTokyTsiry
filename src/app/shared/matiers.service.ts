@@ -13,7 +13,7 @@ export class MatiersService {
 
   constructor(private loggingService:LoggingService, private http:HttpClient) { }
 
-  uri = "https://mean-backoffice.herokuapp.com/api/matiers";
+  uri = "https://apinodetsirytoky.herokuapp.com/api/matiers";
 
 
   getMatieres():Observable<Matier[]> {

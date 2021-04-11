@@ -15,8 +15,8 @@ export class AssignmentsService {
 
   constructor(private loggingService:LoggingService, private http:HttpClient) { }
 
-  uri = "https://mean-backoffice.herokuapp.com/api/assignments";
-  uri2 = "https://mean-backoffice.herokuapp.com/api/getAssignments_Lib";
+  uri = "https://apinodetsirytoky.herokuapp.com/api/assignments";
+  uri2 = "https://apinodetsirytoky.herokuapp.com/api/getAssignments_Lib";
 
   getAssignments():Observable<Assignment[]> {
     console.log("Dans le service de gestion des assignments...")

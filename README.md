@@ -30,8 +30,8 @@ Pour admin:
   - Nous pouvons supprimer, modifier un assignment ou l'atrribuer une note afin de rendre un assignment
 
 # Webographie
-https://medium.com/@tiagovalverde/how-to-save-your-app-state-in-localstorage-with-angular-ce3f49362e31
-https://material.angular.io/components/stepper/examples
-https://material.angular.io/components/snack-bar/examples
-https://v7.material.angular.io/cdk/drag-drop/examples
-https://material.angular.io/components/toolbar/examples
+- https://medium.com/@tiagovalverde/how-to-save-your-app-state-in-localstorage-with-angular-ce3f49362e31
+- https://material.angular.io/components/stepper/examples
+- https://material.angular.io/components/snack-bar/examples
+- https://v7.material.angular.io/cdk/drag-drop/examples
+- https://material.angular.io/components/toolbar/examples

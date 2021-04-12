@@ -31,4 +31,7 @@ Pour admin:
 
 # Webographie
 https://medium.com/@tiagovalverde/how-to-save-your-app-state-in-localstorage-with-angular-ce3f49362e31
-https://material.angular.io/components/
+https://material.angular.io/components/stepper/examples
+https://material.angular.io/components/snack-bar/examples
+https://v7.material.angular.io/cdk/drag-drop/examples
+https://material.angular.io/components/toolbar/examples

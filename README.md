@@ -5,8 +5,8 @@ Projet Frontend Angular
 https://angularfronttokytsiry.herokuapp.com/
 
 # Membres du groupe
-RAFIDIMANANA Toky Ny Aina Num-19
-ANDRIAMAHAFALY Tsiry Abdou Axel Num-01
+- RAFIDIMANANA Toky Ny Aina Num-19
+- ANDRIAMAHAFALY Tsiry Abdou Axel Num-01
 
 # Démarrage du projet
 Pour lancer le projet en local, il faut:

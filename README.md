@@ -10,9 +10,9 @@ https://angularfronttokytsiry.herokuapp.com/
 
 # Démarrage du projet
 Pour lancer le projet en local, il faut:
-- Faire un npm install pour les nodes modules
+- Faire un "npm install" pour les nodes modules
 (On a pas besoin de lancer l'api node en local car nous utilisons les liens de l'api herbergé sur heroku)
-- Faire un ng serve pour lancer l'application
+- Faire un "ng serve" pour lancer l'application
 
 # Login de l'application
 Pour admin:

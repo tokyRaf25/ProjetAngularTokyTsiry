@@ -1,4 +1,4 @@
-# ProjetAngularTokyTsiry
+# Projet Angular de gestion des assignments
 Projet Frontend Angular
 
 # Lien du projet sur heroku

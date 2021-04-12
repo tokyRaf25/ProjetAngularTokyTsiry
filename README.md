@@ -24,10 +24,13 @@ Pour admin:
   - Nous avons utilisé LocalStorage de angular pour sauvegarder l'état et les informations de l'individu connecté
 - On a amélioré tous l'interface du projet
 - Dans la liste des assignments:
-  - Nous avons divisé la liste en deux parties assignments rendus et non rendus afin d'effectuer un "Drag and Drop" entre les deux.
+  - Nous avons divisé la liste en deux parties assignments rendus et non rendus afin d'effectuer un "Drag and Drop" entre les deux
   - Nous pouvons voir les détails de l'assignment avec le bouton détail.  
 - Dans détail d'un assignment:
   - Nous pouvons supprimer, modifier un assignment ou l'atrribuer une note afin de rendre un assignment
+
+# Remarque
+Quand vous allez insérer un nouveau assignment, veuillez vous mettre à la fin de la paggination pour le voir 
 
 # Webographie
 - https://medium.com/@tiagovalverde/how-to-save-your-app-state-in-localstorage-with-angular-ce3f49362e31

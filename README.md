@@ -19,7 +19,7 @@ Pour admin:
  -  Username: toky
  -  Password: toky
 
-# Fonctionnalités détaillées du projet
+# Fonctionnalités du projet
 - Authentification avec un compte admin de l'application:
   - Nous avons utilisé LocalStorage de angular pour sauvegarder l'état et les informations de l'individu connecté
 - On a amélioré tous l'interface du projet

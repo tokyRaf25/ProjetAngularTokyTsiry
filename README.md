@@ -31,7 +31,7 @@ Pour admin:
 - Dans détail d'un assignment:
   - Nous pouvons supprimer, modifier un assignment ou l'atrribuer une note afin de rendre un assignment
 - Gestion des erreurs:
-  - Login incorrect.
+  - Login incorrect
   - Lorsqu'on rend un assignment sans note (utilisation des SnackBar pour les messages)
 
 # Remarque
